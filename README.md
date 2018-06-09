@@ -1,9 +1,17 @@
-# py3np_LV_binary_formats
-Module to work with LabVIEW binary formats including flattened data and TDMS (based on python3+numpy)
+# py3np_LV_binary_files
+
+Module to read/write LabVIEW binary files including flattened data and TDMS (based on python3+numpy).
 
 ## Getting Started
 
-... TBD
+Two classes are defined, one for each type of file:
+
+    LV_fd() works with flattened data
+    LV_TDMS() works with Technical Data Management Streaming (TDMS)
+
+The former is more advanced in terms of development, although not all types of
+flattened data are implemented, the latter is still in an experimental stage.
+
 
 ### Prerequisites
 
