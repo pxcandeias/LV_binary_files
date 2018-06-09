@@ -31,7 +31,7 @@ from LVBF import LV_fd
 
 reader = LV_fd(endian='>', encoding='cp1252')
 with open('some_file.bin', mode='rb') as reader.fobj:
-    reader.read_numeric()
+    value = reader.read_numeric()
 ```
 
 ## Contributing
