@@ -30,25 +30,15 @@ import numpy as np
 class LV_fd():
     """LabVIEW flattened data.
     
-    Data attributes
-    ---------------
-    self.LVint8 # 8-bit signed integer
-    self.LVuint8 # 8-bit unsigned integer
-    self.LVint16 # 16-bit signed integer
-    self.LVuint16 # 16-bit unsigned integer
-    self.LVint32 # 32-bit signed integer
-    self.LVuint32 # 32-bit unsigned integer
-    self.LVint64 # 64-bit signed integer
-    self.LVuint64 # 64-bit unsigned integer
-    self.LVfloat16 # 16-bit floating-point number
-    self.LVfloat32 # 32-bit floating-point number
-    self.LVfloat64 # 64-bit floating-point number
-    self.LVstring1 # 1-character (8-bit) string
-    self.LVtimestamp # time stamp
+    Instance variables
+    ------------------
+    fobj # file object for the read/write functions
+    endian # file endianness
+    encoding # byte encoding (Python 3)
     
     Methods
     -------
-    _set_dtypes
+    _set_dtypes # set data attributes
     read_numeric
     read_boolean
     read_string
@@ -67,7 +57,23 @@ class LV_fd():
     write_cluster
     Unix_time
     LV_time
-    EOD
+    EOD # End-Of-Data
+    
+    Data attributes
+    ---------------
+    self.LVint8 # 8-bit signed integer
+    self.LVuint8 # 8-bit unsigned integer
+    self.LVint16 # 16-bit signed integer
+    self.LVuint16 # 16-bit unsigned integer
+    self.LVint32 # 32-bit signed integer
+    self.LVuint32 # 32-bit unsigned integer
+    self.LVint64 # 64-bit signed integer
+    self.LVuint64 # 64-bit unsigned integer
+    self.LVfloat16 # 16-bit floating-point number
+    self.LVfloat32 # 32-bit floating-point number
+    self.LVfloat64 # 64-bit floating-point number
+    self.LVstring1 # 1-character (8-bit) string
+    self.LVtimestamp # time stamp
     
     References
     ----------
