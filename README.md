@@ -30,8 +30,19 @@ The kind of usage intended for LV_fd is the following:
 from LVBF import LV_fd
 
 reader = LV_fd(endian='>', encoding='cp1252')
+
 with open('some_file.bin', mode='rb') as reader.fobj:
-    value = reader.read_numeric()
+    value0 = reader.read_numeric(reader.LVint32) # read one LVint32 value
+    values = reader.read_numeric(reader.LVfloat64, c=2) # read two LVfloat64 values
+    array0 = reader.read_array(reader.read_numeric, reader.LVint32) # read an array of LVint32 values
+    array1 = reader.read_array(reader.read_numeric, reader.LVfloat64) # read an array of LVfloat64 values
+    string0 = reader.read_string() # read one string
+    strings = reader.read_array(reader.read_string) # read an array of strings
+    timestamp = reader.read_array(reader.read_timestamp, reader.LVtimestamp) # read an array of LVtimestamp
+    eof = reader.EOD() # check for End-Of-Data
+    
+    if not eof:
+        raise EOFError('End-Of-Data not reached!')
 ```
 
 ## Contributing
